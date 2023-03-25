@@ -1,0 +1,4 @@
+const SEARCHKEY = '1672415826536535'
+
+
+export default SEARCHKEY;
