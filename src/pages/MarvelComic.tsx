@@ -16,10 +16,13 @@ export const MarvelComic= () => {
 
 
 
-  const [pageNumber,SetPageNumber] = useState(0);
+  const [pageNumber,SetPageNumber] = useState(()=>{
+    const storedPageNumber= localStorage.getItem('pageNumber');
+    return storedPageNumber ?parseInt(storedPageNumber):0
+  });
 
 
-  const [number,setNumber] = useState(0);
+
 
   
   const { data, status } = useQuery(["marvelData",pageNumber], ()=>MarvelData(pageNumber));
@@ -27,13 +30,12 @@ export const MarvelComic= () => {
   const nextPage = ()=>{
     SetPageNumber
     (pageNumber+10);
-    setNumber(number+1);
   }
 
   const PrevPage = ()=>{
     SetPageNumber(pageNumber-10);
 
-    setNumber(number-1);
+
   }
  
  
@@ -111,7 +113,7 @@ export const MarvelComic= () => {
         Prev Page
       </button>
 
-      <p className="text-2xl ">{number}</p>
+  
 
       <button onClick={nextPage}>Next Page</button>
     </div>
