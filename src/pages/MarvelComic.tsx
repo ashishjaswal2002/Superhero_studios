@@ -29,7 +29,7 @@ export const MarvelComic= () => {
   
   const nextPage = ()=>{
     SetPageNumber
-    (pageNumber+10);
+    (pageNumber+30);
   }
 
   const PrevPage = ()=>{
@@ -70,7 +70,7 @@ export const MarvelComic= () => {
        
 
             <ul className="p-2 mt-2 grid sm:grid-cols-2 md:grid-cols-3 gap-6 extra_cl  lg:p-24 duration-300 lg:grid-cols-4  e3d items-baseline"> 
-                {data.data.results.map((marvel:{id:number,title:string,type:string,urls:any,thumbnail:any,pageCount:number,series:{resourceURI:string,name:string}})=>(
+                {data.data.results.map((marvel:{id:number,title:string,type:string,thumbnail:any,pageCount:number,urls:[{url:string}],series:{name:string}})=>(
                   <li key={marvel.id} className='outline  p-1 rounded-xl justify-self-center duration-300  hover:scale-105   bg-yellow-500'>
                         <img src={`${marvel.thumbnail.path}.${marvel.thumbnail.extension}`} alt={marvel.title} className='rounded-md' />
                       
@@ -91,15 +91,23 @@ export const MarvelComic= () => {
 
               </span>
               {marvel.series.name}</p>
-            <a href={marvel.series.resourceURI} className="underline hover:no-underline text-white hover:text-blue-400 ">Click to Know more</a>
+            
 
-            <span> 🔗</span>
-         
+              <span>{marvel.urls.map((id)=>(
+ <a href={`${id.url}`} key={`${id.url}`} className='text-red-500'>Click to know more 🔗</a>
+                    ))}
+                    
+                    </span>
+
                          </div>
+
+                         
                         
                     </li>
                 ))}
 
+                
+            
                
             </ul>
                 </>
