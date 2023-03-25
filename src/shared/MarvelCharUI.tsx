@@ -1,7 +1,13 @@
 import React from "react";
 import { HeroesUI } from "./HeroesUI";
 
-export const MarvelCharUI = ({ data, status }:any) => {
+interface MarvelCharUIProps {
+  dataArray:[]
+  data:[]
+  status: string;
+}
+
+export const MarvelCharUI = ({ data, status }:MarvelCharUIProps) => {
   return (
     <section className="w-[100%] ">
       <h1 className=" text-[2rem] text-white text-center">
@@ -21,7 +27,7 @@ export const MarvelCharUI = ({ data, status }:any) => {
 
       {status === "success" && (
         <>
-          <HeroesUI data={data} status={status} />
+          <HeroesUI data={data} status={status} dataArray={data} />
         </>
       )}
     </section>

@@ -4,7 +4,7 @@ import { useState} from "react";
 import { MarvelCharUI } from "../shared/MarvelCharUI";
 
 
-import Characterkey from '../Private/Characterkey';
+import Characterkey from '../personal/Characterkey';
 
 const MarvelData = async (pageNumber: any) => {
   const res = await fetch(
@@ -43,7 +43,7 @@ export const MarvelCharacters = () => {
      
 
        
-       <MarvelCharUI data={data} status={status}  />
+       <MarvelCharUI data={data} status={status}  dataArray={data}/>
      
       
 

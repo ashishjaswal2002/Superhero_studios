@@ -1,8 +1,12 @@
 import React from 'react'
 
+interface Heroes{
+   data:any
+  dataArray:[],
+  status:string
+}
 
-
-export const HeroesUI = ({data,status}:any) => {
+export const HeroesUI = ({data,status}:Heroes) => {
   return (
     <div>
 

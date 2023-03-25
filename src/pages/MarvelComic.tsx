@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useState}from "react";
-import ComicKey from '../Private/ComicKey';
+import ComicKey from '../personal/ComicKey';
 
 
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import { useState} from "react";
 import { useQuery } from "react-query";
-import SEARCHKEY from '../Private/apikey';
+import SEARCHKEY from '../personal/apikey';
 
 
 
