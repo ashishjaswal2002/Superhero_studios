@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const HeroesUI = ({data}) => {
+
+
+export const HeroesUI = ({data}:any) => {
   return (
     <div>
 
@@ -18,7 +20,7 @@ export const HeroesUI = ({data}) => {
                         
                     </li>
                 ))}
-
+ 
              
 
             </ul>
